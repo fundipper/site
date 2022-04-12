@@ -1,0 +1,97 @@
+# site
+[site]
+origin = "https://fungo.dev"
+port = ":3000"
+name = "Fungo"
+slogan = "simple and fast static site engine"
+theme = "fungo"
+
+[site.markdown]
+highlighting = "morkia"
+
+[site.lazyload]
+old = "<img src="
+new = "<img class=\"lazy\" src=\"/assets/img/loading.gif\" data-src="
+
+[site.sitemap]
+changefreq = "weekly"
+priority = "0.7"
+
+[site.feeds]
+content = false
+action = "/post/"
+
+# article
+[[article]]
+name = "post"
+size = 10
+catalog = true
+
+
+[[article]]
+name = "theme"
+size = 10
+catalog = true
+
+# page
+[[page]]
+name = "page"
+root = true
+
+# document
+[[document]]
+name = "doc"
+sidebar = [
+    { number = "1", name = "起步", node = [
+        { name = "概览", route = "/doc/overview/" },
+        { name = "安装", route = "/doc/install/" },
+        { name = "指令", route = "/doc/cmd/" },
+        { name = "资源", node = [
+            { name = "文章类型", route = "/doc/source/article/" },
+            { name = "文档类型", route = "/doc/source/document/" },
+            { name = "单页类型", route = "/doc/source/page/" },
+            { name = "拓展资源", route = "/doc/source/extend/" },
+        ] },
+
+    ] },
+]
+
+[[customize]]
+name = "index"
+route = "/"
+action = "/post/"
+
+[[customize]]
+name = "software"
+route = "/software/"
+action = "/post/"
+
+[[customize]]
+name = "ios"
+route = "/software/ios/"
+action = "/post/"
+
+[[customize]]
+name = "android"
+route = "/software/android/"
+action = "/post/"
+
+[[i18n]]
+name = "i18n"
+route = "/zh/"
+path = "zh-CN.toml"
+action = "/post/"
+
+[[i18n]]
+name = "i18n"
+route = "/en/"
+path = "en.toml"
+action = "/post/"
+
+[[static]]
+name = "media"
+subtree = ["audio", "video", "image"]
+
+[[static]]
+name = "assets"
+subtree = ["css", "img", "js"]

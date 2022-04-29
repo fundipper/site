@@ -6,17 +6,62 @@ name = "Fungo"
 slogan = "simple and fast static site engine"
 theme = "fungo"
 
-[site.markdown]
-highlighting = "morkia"
+# markdown
+[site.markdown.state]
+emoji = true
+gfm = true
 
-[site.lazyload]
-old = "<img src="
-new = "<img class=\"lazy\" src=\"/assets/img/loading.gif\" data-src="
+# highlighting
+[site.markdown.highlighting]
+state = true
+theme = "github"
+linenumber = true
 
+# image
+[site.markdown.image]
+state = true
+source = "/assets/img/loading.gif"
+target = "data-src"
+
+[site.markdown.image.attribute]
+class = "lazy"
+
+# link
+[site.markdown.link]
+state = true
+
+[site.markdown.link.source]
+"fungo.dev" = true
+"www.fundipper.cn" = true
+
+[site.markdown.link.attribute]
+rel = "nofollow"
+target = "_blank"
+
+# video
+[site.markdown.video]
+state = true
+
+[site.markdown.video.source]
+"www.youtube.com" = "/embed"
+"player.bilibili.com" = "/player.html"
+"v.qq.com" = "/txp/iframe/player.html"
+
+[site.markdown.video.attribute]
+width = "560"
+height = "315"
+border = "0"
+scrolling = "no"
+frameborder = "no"
+framespacing = "0"
+allowfullscreen = "true"
+
+# sitemap
 [site.sitemap]
 changefreq = "weekly"
 priority = "0.7"
 
+# feeds
 [site.feeds]
 content = false
 action = "/post/"
@@ -26,67 +71,41 @@ action = "/post/"
 name = "post"
 size = 10
 catalog = true
-
+template = "posts"
 
 [[article]]
 name = "theme"
 size = 10
 catalog = true
+template = "themes"
 
 # page
 [[page]]
 name = "page"
 root = true
 
+[[page]]
+name = "tags"
+catalog = true
+
 # document
 [[document]]
 name = "doc"
 sidebar = [
-    { number = "1", name = "起步", node = [
+    { number = "1.", name = "起步", node = [
         { name = "概览", route = "/doc/overview/" },
-        { name = "安装", route = "/doc/install/" },
-        { name = "指令", route = "/doc/cmd/" },
-        { name = "资源", node = [
-            { name = "文章类型", route = "/doc/source/article/" },
-            { name = "文档类型", route = "/doc/source/document/" },
-            { name = "单页类型", route = "/doc/source/page/" },
-            { name = "拓展资源", route = "/doc/source/extend/" },
-        ] },
-
     ] },
 ]
 
 [[customize]]
 name = "index"
 route = "/"
-action = "/post/"
+action = "/tags/"
 
 [[customize]]
-name = "software"
-route = "/software/"
-action = "/post/"
-
-[[customize]]
-name = "ios"
-route = "/software/ios/"
-action = "/post/"
-
-[[customize]]
-name = "android"
-route = "/software/android/"
-action = "/post/"
-
-[[i18n]]
-name = "i18n"
-route = "/zh/"
-path = "zh-CN.toml"
-action = "/post/"
-
-[[i18n]]
-name = "i18n"
-route = "/en/"
-path = "en.toml"
-action = "/post/"
+name = "changelog"
+route = "/changelog/"
+action = "/tags/"
 
 [[static]]
 name = "media"

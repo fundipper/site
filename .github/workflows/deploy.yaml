@@ -1,0 +1,45 @@
+name: Fungo Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+  pull_request:
+    branches:
+      - master
+
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    container:
+      image: fundipper/fungo:latest
+
+    steps:
+      - name: config
+        run: |
+          set -e
+          echo "Host *
+            StrictHostKeyChecking no
+            UserKnownHostsFile=/dev/null
+          " > /etc/ssh/ssh_config
+          git config --global --add safe.directory /__w/fungo/fungo
+
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: build
+        run: fungo build
+
+      - name: deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          commit_message: ${{ github.event.head_commit.message }}
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          external_repository: fundipper/fundipper.github.io
+          publish_branch: master
+          publish_dir: ./public
+          cname: fungo.dev

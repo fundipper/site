@@ -1,92 +1,159 @@
 ---
-title: Why Fungo
+title: 概览
 keywords: ""
 description: ""
 date: "2022-03-27"
 ---
 
-当我们想
+         ____
+        / __/  __  __   ____    ____ _  ____
+       / /_   / / / /  / __ \  / __  / / __ \
+      / __/  / /_/ /  / / / / / /_/ / / /_/ /
+     /_/     \__,_/  /_/ /_/  \__, /  \____/
+                            /____/ v0.2.9
 
-- 撰写一篇博客
+[fungo](https://fungo.dev) is a simple and fast open-source static site generators base on golang.
 
-- 编辑一些文档
+## 亮点
 
-- 展示一个产品
+---
 
-- 发布一个海报
+1. Simple
 
-- ……
+   only 5 command, easy to use
 
-我们希望有一款产品，可以具有以下特性：
+2. Fast
 
-    1. 开源
+   serve & build mode, both start less than 1s
 
-    2. 支持博客，文档，单页和自定义模型
+3. I18N
 
-    3. 支持Markdown文档，支持I18N
+   add multi-language not need to change any code
 
-    4. 支持拓展内容和定制主题
+4. Customize
 
-    5. 支持预览和编译
+   can be blog & document & page and more
 
-    6. 容易上手
+5. Markdown
 
-    7. SEO友好
+   syntax highlighting & toc markdown support
 
-我们寻找并测试了一些广受好评的作品，包括但不限于
+6. SEO
 
-- Hugo
+   automatic seo friendly siteamp & rss
 
-- Zola
+## 安装
 
-- Hexo
+---
 
-- Gridea
+local
 
-- Zine
+    go install github.com/fundipper/fungo@latest
 
-- ……
+docker
 
-结果，无一例外的经历了`从入门到放弃`
+    docker pull fundipper/fungo:latest
 
-**索性，我们来建造一个理想国吧！**
+get more info, checkout [local](/doc/start/local/)， [docker](/doc/start/docker/) document
 
-于是，便有了Fungo
+## 文档
 
-1. 开箱即用
+---
 
-    仅含5条指令`site，file，theme，serve，build`
+the official website [fungo.dev](https://fungo.dev) is generate by `fungo` now.
 
-2. 一站式服务
+- [document](/doc/overview/)
 
-    做官网，做博客，做文档，做单页，做海报全都支持
+- [blog](/post/)
 
-3.  上手简单
+- [theme](/theme/)
 
-    模板使用`go template`方案，几乎不含自创语法
-  
-    样式使用主流`tailwindcss`方案，无需重复学习
+## 特性
 
-**Thanks**
+---
 
-- [x] cmd https://github.com/spf13/cobra
+- [x] Support
 
-- [x] config https://github.com/spf13/viper
+  - [x] [Article](/doc/create/article/)
 
-- [x] router https://github.com/julienschmidt/httprouter
+  - [x] [Page](/doc/create/page/)
 
-- [x] markdown https://github.com/yuin/goldmark
+  - [x] [Document](/doc/create/document/)
 
-- [x] cache https://github.com/dgraph-io/ristretto
+  - [x] [Customize](/doc/create/customize/)
 
-- [x] copy https://github.com/otiai10/copy
+  - [x] [I18N](/doc/create/i18n/)
 
-- [x] git https://github.com/go-git/go-git
+- [x] [Markdown](/doc/config/site/markdown/)
 
-- [x] watch file https://github.com/fsnotify/fsnotify
+  - [x] TOC
 
-- [x] sitemap https://github.com/beevik/etree
+  - [x] META
 
-- [x] render go/template
+  - [x] Emoji
 
-- [ ] feed
+  - [x] GFM (Table，Strikethrough，Linkify，TaskList)
+
+  - [x] DefinitionList
+
+  - [x] Footnote
+
+  - [x] Typographer
+
+  - [x] Mathjax
+
+  - [x] Mermaid
+
+  - [x] [Highlighting](/doc/config/site/highlighting/)
+
+  - [x] [Image Lazyload](/doc/config/site/image/)
+
+  - [x] [Link Reset](/doc/config/site/link/)
+
+  - [x] [Video Embed](/doc/config/site/video/)
+
+- [x] [Feeds](/doc/config/site/feeds/)
+
+  - [x] RSS 2.0
+
+  - [x] Atom 1.0
+
+  - [x] JSON 1.1
+
+- [x] SEO
+
+  - [x] [Sitemap.xml](/doc/config/site/sitemap/)
+
+  - [x] [Robots.txt](/doc/config/site/robots/)
+
+## 感谢
+
+---
+
+- Language & Framework
+
+  - [golang](https://go.dev/)
+
+  - [tailwindcss](https://www.tailwindcss.com/)
+
+  - [alpinejs](https://alpinejs.dev/)
+
+- Tools & Libraries
+
+  - [cobra](https://github.com/spf13/cobra)
+
+  - [viper](https://github.com/spf13/viper)
+
+  - [goldmark](https://github.com/yuin/goldmark)
+
+  - [ristretto](https://github.com/dgraph-io/ristretto)
+
+  - [httprouter](https://github.com/julienschmidt/httprouter)
+
+  - [fsnotify](https://github.com/fsnotify/fsnotify)
+
+  - [copy](https://github.com/otiai10/copy)
+
+  - [go-git](https://github.com/go-git/go-git)
+
+  - [etree](https://github.com/beevik/etree)

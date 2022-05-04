@@ -107,6 +107,18 @@ name = "changelog"
 route = "/changelog/"
 action = "/tags/"
 
+[[i18n]]
+name = "index"
+route = "/en/"
+path = "en.toml"
+action = "/tags/"
+
+[[i18n]]
+name = "index"
+route = "/zh/"
+path = "zh-CN.toml"
+action = "/tags/"
+
 [[static]]
 name = "media"
 subtree = ["audio", "video", "image"]

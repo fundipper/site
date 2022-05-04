@@ -1,10 +1,12 @@
 # site
 [site]
-origin = "https://fungo.dev"
+origin = "https://your-domain-name"
 port = ":3000"
-name = "Fungo"
-slogan = "simple and fast static site engine"
+name = "your-site-name"
+slogan = "your-site-slogan"
 theme = "fungo"
+size = 10
+amount = 3
 
 # markdown
 [site.markdown.state]
@@ -32,7 +34,6 @@ state = true
 
 [site.markdown.link.source]
 "fungo.dev" = true
-"www.fundipper.cn" = true
 
 [site.markdown.link.attribute]
 rel = "nofollow"
@@ -63,19 +64,18 @@ priority = "0.7"
 
 # feeds
 [site.feeds]
-content = false
 action = "/post/"
+limit = 100
+content = false
 
 # article
 [[article]]
 name = "post"
-size = 10
 catalog = true
 template = "posts"
 
 [[article]]
 name = "theme"
-size = 10
 catalog = true
 template = "themes"
 

@@ -1,9 +1,9 @@
 # site
 [site]
-origin = "https://your-domain-name"
+origin = "https://fungo.dev"
 port = ":3000"
-name = "your-site-name"
-slogan = "your-site-slogan"
+name = "Fungo"
+slogan = "SIMPLE AND FAST STATIC SITE ENGINE"
 theme = "fungo"
 size = 10
 amount = 3

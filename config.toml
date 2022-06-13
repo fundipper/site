@@ -31,42 +31,29 @@ class = "lazy"
 # link
 [site.markdown.link]
 state = true
-
-[site.markdown.link.source]
-"fungo.dev" = true
-
-[site.markdown.link.attribute]
-rel = "nofollow"
-target = "_blank"
+source = ["fungo.dev"]
+attribute = { rel = "nofollow", target = "_blank" }
 
 # video
 [site.markdown.video]
 state = true
-
-[site.markdown.video.source]
-"www.youtube.com" = "/embed"
-"player.bilibili.com" = "/player.html"
-"v.qq.com" = "/txp/iframe/player.html"
-
-[site.markdown.video.attribute]
-width = "560"
-height = "315"
-border = "0"
-scrolling = "no"
-frameborder = "no"
-framespacing = "0"
-allowfullscreen = "true"
-
-# sitemap
-[site.sitemap]
-changefreq = "weekly"
-priority = "0.7"
+source = [
+    { name = "www.youtube.com", path = "/embed" },
+    { name = "player.bilibili.com", path = "/player.html" },
+    { name = "v.qq.com", path = "/txp/iframe/player.html" },
+]
+attribute = { width = "560", height = "315", border = "0", scrolling = "no", frameborder = "no", framespacing = "0", allowfullscreen = "true" }
 
 # feeds
 [site.feeds]
 action = "/post/"
 limit = 100
-content = false
+content = true
+
+# sitemap
+[site.sitemap]
+changefreq = "weekly"
+priority = "0.7"
 
 # article
 [[article]]
